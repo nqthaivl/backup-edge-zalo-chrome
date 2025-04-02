@@ -223,13 +223,10 @@ class BackupTool(QMainWindow):
         footer = QWidget()
         footer_layout = QHBoxLayout()
         footer.setStyleSheet("background-color: #f5f6f5;")
-        footer_label = QLabel("© 2025 1TouchPro - Mọi quyền được bảo lưu")
+        footer_label = QLabel("© 2025 1Touch.Pro")
         footer_label.setStyleSheet("font: 8pt 'Segoe UI'; color: #888888;")
-        phuocit_label = QLabel("https://1touch.pro")
-        phuocit_label.setStyleSheet("font: italic 8pt 'Segoe UI'; color: #ff5555;")
         footer_layout.addWidget(footer_label)
         footer_layout.addStretch()
-        footer_layout.addWidget(phuocit_label)
         footer.setLayout(footer_layout)
         
         main_layout = QVBoxLayout()
@@ -254,14 +251,14 @@ class BackupTool(QMainWindow):
         select_btn = QPushButton("Chọn")
         select_btn.clicked.connect(self.select_zalo_dest)
         select_btn.setStyleSheet("background-color: #4a90e2; color: white;")
-        select_btn.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'images', 'icon.ico')))
+        select_btn.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'images', 'select.ico')))
         layout.addWidget(select_btn)
         
         self.zalo_progress = QProgressBar()
         layout.addWidget(QLabel("Tiến Trình:"))
         layout.addWidget(self.zalo_progress)
         
-        start_btn = QPushButton("BẮT ĐẦU SAO LƯU")
+        start_btn = QPushButton("Bắt đầu sao lưu")
         start_btn.clicked.connect(self.start_zalo_backup)
         start_btn.setStyleSheet("background-color: #4a90e2; color: white; font: bold 12pt 'Helvetica';")
         start_btn.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'images', 'icon.ico')))
@@ -292,7 +289,7 @@ class BackupTool(QMainWindow):
         backup_layout.addWidget(self.chrome_backup_dest, 1, 1)
         select_backup_btn = QPushButton("Chọn")
         select_backup_btn.clicked.connect(self.select_chrome_backup_dest)
-        select_backup_btn.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'images', 'icon.ico')))
+        select_backup_btn.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'images', 'select.ico')))
         backup_layout.addWidget(select_backup_btn, 1, 2)
         
         backup_btn = QPushButton("Sao Lưu Ngay")
@@ -310,7 +307,7 @@ class BackupTool(QMainWindow):
         restore_layout.addWidget(self.chrome_restore_src, 0, 1)
         select_restore_btn = QPushButton("Chọn")
         select_restore_btn.clicked.connect(self.select_chrome_restore_src)
-        select_restore_btn.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'images', 'icon.ico')))
+        select_restore_btn.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'images', 'select.ico')))
         restore_layout.addWidget(select_restore_btn, 0, 2)
         
         self.chrome_restore_combo = QComboBox()
@@ -354,7 +351,7 @@ class BackupTool(QMainWindow):
         backup_layout.addWidget(self.edge_backup_dest, 1, 1)
         select_backup_btn = QPushButton("Chọn")
         select_backup_btn.clicked.connect(self.select_edge_backup_dest)
-        select_backup_btn.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'images', 'icon.ico')))
+        select_backup_btn.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'images', 'select.ico')))
         backup_layout.addWidget(select_backup_btn, 1, 2)
         
         backup_btn = QPushButton("Sao Lưu Ngay")
@@ -372,7 +369,7 @@ class BackupTool(QMainWindow):
         restore_layout.addWidget(self.edge_restore_src, 0, 1)
         select_restore_btn = QPushButton("Chọn")
         select_restore_btn.clicked.connect(self.select_edge_restore_src)
-        select_restore_btn.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'images', 'icon.ico')))
+        select_restore_btn.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'images', 'select.ico')))
         restore_layout.addWidget(select_restore_btn, 0, 2)
         
         self.edge_restore_combo = QComboBox()
@@ -409,7 +406,7 @@ class BackupTool(QMainWindow):
         select_btn = QPushButton("Chọn")
         select_btn.clicked.connect(self.select_general_dest)
         select_btn.setStyleSheet("background-color: #4a90e2; color: white;")
-        select_btn.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'images', 'icon.ico')))
+        select_btn.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'images', 'select.ico')))
         layout.addWidget(select_btn)
         
         grid = QGridLayout()
@@ -423,7 +420,7 @@ class BackupTool(QMainWindow):
         self.custom_path = QLineEdit()
         self.custom_select_btn = QPushButton("Chọn")
         self.custom_select_btn.clicked.connect(self.select_custom_path)
-        self.custom_select_btn.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'images', 'icon.ico')))
+        self.custom_select_btn.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'images', 'select.ico')))
         
         grid.addWidget(self.desktop_cb, 0, 0)
         grid.addWidget(self.documents_cb, 0, 1)
@@ -443,7 +440,7 @@ class BackupTool(QMainWindow):
         self.status_label = QLabel("Trạng Thái: Chưa Bắt Đầu")
         layout.addWidget(self.status_label)
         
-        start_btn = QPushButton("BẮT ĐẦU")
+        start_btn = QPushButton("Bắt đầu sao lưu")
         start_btn.clicked.connect(self.start_general_backup)
         start_btn.setStyleSheet("background-color: #4a90e2; color: white; font: bold 12pt 'Helvetica';")
         start_btn.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'images', 'icon.ico')))
